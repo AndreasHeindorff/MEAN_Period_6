@@ -49,9 +49,32 @@ Open Chrome and navigate to: "chrome://inspect/#devices".
 
 #### 5. Explain when and why CORS is a problem for Hybrid Mobile Applications
 
+Cross Origin Resource Sharing (CORS) is a safety feature in modern browsers. This feature makes it so that the website is not allowed to make a HTTP request to a url that is not the same as the root site. This can cause problems in Hybrid App developåement when trying to use an API like Google Maps, because it has a different url than the app when develeoping it.
+
 #### 6. Explain how and why it is possible for a Hybrid Application to access native phone devices like location, calendar etc.
 
+Hybrid Apps use frameworks like Cordova and PhoneGap to access the native features of a phone. These frameworks have API's that can access the different features, which makes development of Hybrid Apps relatively easy.
+
 #### 7. Explain using an example the "fundamentals" of an ionic application.
+
+Ionic uses AngularJS and Cordova to create Hybrid Apps, for the styling of this app Ionic uses CSS and JavaScript like BootStrap does. When creating the HTML for a the app, Ionic specific directives is used like this.
+
+```
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-dark">
+      <h1 class="title">Projects</h1>
+      <button class="button button-icon ion-plus" ng-click="newProject()">
+      </button>
+    </ion-header-bar>
+    <ion-content scroll="false">
+      <ion-list>
+        <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
+          {{project.title}}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+```
 
 #### 8. Explain using an example how your Hybrid Application communicates with a backend and how CORS problems were solved (if any)
 
